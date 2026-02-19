@@ -1,0 +1,58 @@
+@Basket_HostAddress = https://localhost:8888/basket
+@accessToken = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGTmRoNERncXJ1R21LVG9DLTFkQTVRTERhM1RLYmZpUF9XWk5pd2VXaWJjIn0.eyJleHAiOjE3NzE1MDAwNzQsImlhdCI6MTc3MTQ5OTc3NCwianRpIjoib25ydHJvOmU2MDZjMjJjLThmNWItYjBlNy1iZGQ0LThlNWJkMGQwMjJhMyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvZXNob3AiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYjVjMDdjOTUtODA2Yy00NDA4LWFjZjYtNTVkYzhhNjE4NGQ1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZXNob3AtY2xpZW50Iiwic2lkIjoiOWYzZTRmNTEtYmZjZi01NzEwLTNkMzAtMGZjYmRhMzFiYWMzIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtZXNob3AiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJUZXN0IFRlc3R5IiwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCIsImdpdmVuX25hbWUiOiJUZXN0IiwiZmFtaWx5X25hbWUiOiJUZXN0eSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.Ac1tdkRLKjGQ5yUeDr8FDK8Xlsw7NhlhFTVV-GVw4e0sUR-kq_IxYtLnhTrquqamwwL0nUQm1S4XNVS3iJn0gFiB92g2TlNZswgb1E3eQ5G3SsnbJMf5SKib45cGGaL4oejrfhX_d5Be5JDTNFgOzwXihyNB7-BdaHhOsyVH0LVBqN1YwIlAT5yaJrhu6mg_hLzu7emsoGjMTU-CAUHF2c_qGOoTbedh-LwftjYHSQ1hH4TMGWdooIvlIwo1bRcL6TUMHm_L25GeYhZbDeMiJyLE9Kj3Qdu6L3YhlLC7tOJT-9qYv8JdE8VJuQm8AkDosp8LTl326J4g-2ZD3pgZJA
+@auth = Bearer {{accessToken}}
+
+### Refresh Token
+
+POST http://localhost:8080/realms/eshop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=eshop-client&scope=email openid&username=test&password=1234
+
+###
+
+GET {{Basket_HostAddress}}/navid
+Accept: application/json
+Authorization: {{auth}}
+
+###
+
+POST {{Basket_HostAddress}}
+Content-Type: application/json
+Authorization: {{auth}}
+
+{
+  "UserName": "navid",
+  "Items": [
+    {
+      "Quantity": 2,
+      "Color": "Red",
+      "Price": 0,
+      "ProductId": 1,
+      "ProductName": ""
+    },
+    {
+      "Quantity": 1,
+      "Color": "Blue",
+      "Price": 0,
+      "ProductId": 2,
+      "ProductName": ""
+    },
+    {
+      "Quantity": 2,
+      "Color": "Black",
+      "Price": 0,
+      "ProductId": 10,
+      "ProductName": ""
+    }
+  ]
+}
+
+###
+
+DELETE {{Basket_HostAddress}}/navid
+Content-Type: application/json
+Authorization: {{auth}}
+
+###
+

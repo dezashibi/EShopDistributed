@@ -1,0 +1,14 @@
+.aider*
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.vs
+.idea
+**/gRPCObjects/*.cs
+/dist/*.*
+!/dist/.gitkeep
+*.db*
+**/release
+.aspire

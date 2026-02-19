@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+		<UserSecretsId>2c3a8f2e-cf20-48c4-9584-09a2a9b7ff3d</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Catalog\Models\Product.cs" Link="Models\Product.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="13.1.1" />
+	</ItemGroup>
+
+</Project>

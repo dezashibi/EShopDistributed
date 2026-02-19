@@ -1,0 +1,54 @@
+@Catalog_HostAddress = https://localhost:7777/products
+
+GET {{Catalog_HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{Catalog_HostAddress}}/1
+Accept: application/json
+
+###
+
+POST {{Catalog_HostAddress}}/
+Content-Type: application/json
+{
+  "id": 10,
+  "name": "New deza Flashlight",
+  "description": "A New deza product for oudoor enthusiasts",
+  "price": 59.99,
+  "imageUrl": "product1.png"
+}
+
+###
+
+PUT {{Catalog_HostAddress}}/10
+Content-Type: application/json
+{
+  "id": 10,
+  "name": "Amazing deza Flashlight",
+  "description": "An Amazing deza product for oudoor enthusiasts",
+  "price": 49.99,
+  "imageUrl": "product1.png"
+}
+
+###
+
+DELETE {{Catalog_HostAddress}}/10
+Content-Type: application/json
+
+### Support AI
+
+GET {{Catalog_HostAddress}}/support/give-me-1-outdoor-activity
+Accept: application/json
+
+### Traditional Search
+
+GET {{Catalog_HostAddress}}/search/Hiking
+Accept: application/json
+
+### AI Search
+GET {{Catalog_HostAddress}}/aisearch/Something_for_rainy_days
+Accept: application/json
+
+###
