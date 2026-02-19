@@ -50,13 +50,14 @@ Implementation notes:
 ## Quick start
 
 1. Clone the repo:
-   - git clone <https://github.com/><your-username>/<this-repo>.git
+   - `git clone https://github.com/dezashibi/EShopDistributed.git`
 2. Docker/Docker Desktop must be ready
 3. Build and run `AppHost` project
-4. The `Aspire` dashboard should be open now, otherwise you can access it via `https://localhost:17125/`
-5. `WebApp` url access: `https://localhost:7080/`
-6. For testing Catalog endpoint use [Catalog.http](/Catalog/Catalog.http) file.
-7. For testing Basket endpoint use [Basket.http](/Basket/Basket.http) file.
+   - Alternatively in the root folder you can run `aspire run` in case Aspire CLI is installed 
+5. The `Aspire` dashboard should be open now, otherwise you can access it via `https://localhost:17125/`
+6. `WebApp` url access: `https://localhost:7080/`
+7. For testing Catalog endpoint use [Catalog.http](/Catalog/Catalog.http) file.
+8. For testing Basket endpoint use [Basket.http](/Basket/Basket.http) file.
    1. Make sure refresh the token using the token endpoint from keycloak (placed in the same http file)
 
 ## Screenshots
